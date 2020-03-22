@@ -9,5 +9,6 @@ import retrofit2.http.Query;
 public interface RemoteEndpoints {
 
     @GET("discover/movie")
-    Call<FilmsList> getFilmsList(@Query("sort_by") String sort);
+    Call<FilmsList> getFilmsList(@Query("sort_by") String sort,
+                                 @Query("page")    int page);
 }

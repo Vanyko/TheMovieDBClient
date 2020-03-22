@@ -12,6 +12,7 @@ import android.util.Log;
 import com.example.themoviedbclient.repository.db.FilmsDatabase;
 
 public class FilmsListActivity extends AppCompatActivity {
+    private static final String TAG = FilmsListActivity.class.getSimpleName();
 
     private FilmsListActivityViewModel filmsListActivityViewModel;
 
@@ -63,7 +64,8 @@ public class FilmsListActivity extends AppCompatActivity {
     }
 
     private void refreshFilmsList() {
-        filmsListActivityViewModel.requestFilmsListUpdate();
+//        filmsListActivityViewModel.requestFilmsListUpdate();
+        Log.e(TAG, "refreshFilmsList() NOT IMPLEMENTED!!!");
     }
 
     private void initViewModel() {

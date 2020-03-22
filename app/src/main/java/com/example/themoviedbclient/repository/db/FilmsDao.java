@@ -1,6 +1,7 @@
 package com.example.themoviedbclient.repository.db;
 
 import androidx.lifecycle.LiveData;
+import androidx.paging.DataSource;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -14,7 +15,10 @@ import java.util.List;
 public interface FilmsDao {
 
     @Query("SELECT * FROM film")
-    LiveData<List<Film>> getAll();
+    List<Film> getAll();
+
+    @Query("SELECT * FROM film")
+    DataSource.Factory<Integer, Film> getAllPaged();
 
     @Insert
     long insertFilm(Film film);
